@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>เกม 24</title>
+    <link rel="stylesheet" href="css/core/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <style>
+        #preload{height:80px;width:80px;position:absolute;top:50%;left:50%;margin-top:-40px;margin-left:-40px}#preload ul{list-style-type:none;margin:0 auto;padding:0;width:100%;height:100%;position:relative;-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);-webkit-transform:rotate(45deg);transform:rotate(45deg)}#preload ul li{width:2em;height:2em;position:absolute;-moz-animation:dance 888ms infinite alternate;-o-animation:dance 888ms infinite alternate;-webkit-animation:dance 888ms infinite alternate;animation:dance 888ms infinite alternate;-moz-animation-timing-function:cubic-bezier(0.5,0,.25,.6);-o-animation-timing-function:cubic-bezier(0.5,0,.25,.6);-webkit-animation-timing-function:cubic-bezier(0.5,0,.25,.6);animation-timing-function:cubic-bezier(0.5,0,.25,.6)}#preload .block-1{top:0;left:0}#preload .block-2{top:0;right:0}#preload .block-3{bottom:0;right:0}#preload .block-4{bottom:0;left:0}#preload li.block-1{-moz-animation-delay:222ms;-o-animation-delay:222ms;-webkit-animation-delay:222ms;animation-delay:222ms}#preload li.block-2{-moz-animation-delay:444ms;-o-animation-delay:444ms;-webkit-animation-delay:444ms;animation-delay:444ms}#preload li.block-3{-moz-animation-delay:666ms;-o-animation-delay:666ms;-webkit-animation-delay:666ms;animation-delay:666ms}#preload li.block-4{-moz-animation-delay:888ms;-o-animation-delay:888ms;-webkit-animation-delay:888ms;animation-delay:888ms}@-moz-keyframes dance{to{-moz-transform:scale(0.65);-ms-transform:scale(0.65);-o-transform:scale(0.65);-webkit-transform:scale(0.65);transform:scale(0.65);background:rgba(0,0,0,.15)}}@-webkit-keyframes dance{to{-moz-transform:scale(0.65);-ms-transform:scale(0.65);-o-transform:scale(0.65);-webkit-transform:scale(0.65);transform:scale(0.65);background:rgba(0,0,0,.15)}}@keyframes dance{to{-moz-transform:scale(0.65);-ms-transform:scale(0.65);-o-transform:scale(0.65);-webkit-transform:scale(0.65);transform:scale(0.65);background:rgba(0,0,0,.15)}}
+    </style>
+</head>
+<body>
+
+    <div id='preload'>
+        <ul class='blocks'>
+            <li class='block-1'></li>
+            <li class='block-2'></li>
+            <li class='block-3'></li>
+            <li class='block-4'></li>
+        </ul>
+    </div>
+    <div id="container" class="container-fluid" style="display: none">
+        <div class="row">
+            <div class="col-sm-4 col-md-3 sidebar">
+                <h1 class="logo">Game 24</h1>
+                <hr />
+                <form role="form">
+                    <div class="form-group">
+                        <h4><label for="txtNumber">ก็อบเลขวาง:</label></h4>
+                        <div>
+                            <input id="txtNumber" type="text" class="form-control" value="1 3 6 9" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h4><label for="txtSum">ผลรวม:</label></h4>
+                        <input id="txtSum" type="number" class="form-control" value="24" />
+                    </div>
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <a class="panel-heading accordion-toggle btn btn-block btn-info"  data-toggle="collapse" data-parent="#accordion" href="#colToppDupOp" style="text-align: center">
+                                <h4 class="panel-title">
+                                    ปรับแต่ง
+                                </h4>
+                            </a>
+                            <div id="colToppDupOp" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div id="toolDupOp">
+                                        <div class="form-group">
+                                            <small class="muted pull-right">*ใส่ได้ไม่เกิน 8 เครื่องหมาย</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numPlus">
+                                                จำนวนเครื่องหมาย "บวก" :
+                                            </label>
+                                            <input id="numPlus" type="number" class="form-control" value="1" min="0" data-val="+" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numSub">
+                                                จำนวนเครื่องหมาย "ลบ" :
+                                            </label>
+                                            <input id="numSub" type="number" class="form-control" value="1" min="0" data-val="-" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numMul">
+                                                จำนวนเครื่องหมาย "คูณ" :
+                                            </label>
+                                            <input id="numMul" type="number" class="form-control" value="1" min="0" data-val="*" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numDiv">
+                                                จำนวนเครื่องหมาย "หาร" :
+                                            </label>
+                                            <input id="numDiv" type="number" class="form-control" value="1" min="0" data-val="/" />
+                                        </div>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input id="chkDupOp" type="checkbox">
+                                            ใช้เครื่องหมายซ้ำได้
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 main">
+                <h1>ผลลัพธ์</h1>
+                <hr />
+                <h4>จำนวนวิธี: <span id="txtFound"></span></h4>
+                <div id="result" class="row"></div>
+
+            </div>
+        </div>
+    </div>
+    <div id="alertify" style="position: fixed; right: 8px; bottom: 0;"></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/bootstrap/transition.js"></script>
+    <script src="js/bootstrap/collapse.js"></script>
+    <script src="js/clipboardmain.js"></script>
+    <script src="js/core.js"></script>
+    <script class="rm-sc">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-48945032-1', 'dx.am');
+        ga('send', 'pageview');
+    </script>
+    <script class="rm-sc">
+        $(document).on("contextmenu", function (e) { return false; });
+        window.addEventListener("load", function () {
+            [].slice.call(document.querySelectorAll('.rm-sc')).forEach(function (e) {
+                e.parentNode.removeChild(e);
+            });
+        }, false);
+    </script>
+</body>
+</html>
